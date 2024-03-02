@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hot Gadgets</title>
+
+    <!--? Font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!--? Link -->
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <!--? Daisy UI, Tailwind CSS & Font Awesome -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.6.0/dist/full.min.css" rel="stylesheet" type="text/css"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/96b7b3e22b.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    
+    <header class="bg-blue-600 bg-opacity-5">
+        <!--! nav start -->
+        <div class="container mx-auto">
+            <nav class="flex justify-between items-center pt-[50px]">
+                <h3 class="text-neutral-700 text-[25px] font-bold placeholder:leading-[30px]">Hot Gadgets</h3>
+                <button class="py-[17px] px-10 bg-blue-600 rounded-lg      text-white text-xl font-bold">Sign Up</button>
+            </nav>
+        </div>
+        <!--! nav end -->
+        <!--! banner start -->
+        <section class="container mx-auto">
+            <div class="pt-[50px] pb-[50px] lg:pb-[364px] text-center">
+                <h1 class="text-stone-950 text-[65px] font-bold">Apple Iphone 13 Pro Max</h1>
+                <p class="lg:w-[738px] m-auto text-neutral-500 text-lg font-normal leading-[30px] pt-6 pb-8">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humor.</p>
+                <button class="py-[17px] px-10 bg-blue-600 rounded-lg      text-white text-xl font-bold">Buy Now</button>
+            </div>
+        </section>
+        <!--! banner end -->
+    </header>
+
+    <!--? Banner Image-->
+    <div class="text-center flex flex-col lg:flex-row justify-center items-center     z-10 lg:translate-y-[-42%]">
+        <img class="hidden lg:block" src="images/banner1.png" alt="mobile">
+        <img src="images/banner2.png" alt="mobile">
+        <img class="hidden lg:block" src="images/banner1.png" alt="mobile">
+    </div>
+
+
+    <main>
+        <!--! search start -->
+        <section class="mt-[-13rem]">
+            <h3 class="text-center text-stone-950 text-[35px] font-semibold">Search your phone</h3>
+            <div class="flex justify-center items-center gap-3 text-center pt-[30px]">
+
+                <!--? Input field -->
+                <label class=" h-[60px] input input-bordered flex items-center gap-3 bg-stone-950 bg-opacity-5 rounded-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M21 21L15.803 15.803M15.803 15.803C17.2096 14.3964 17.9998 12.4887 17.9998 10.4995C17.9998 8.51029 17.2096 6.60256 15.803 5.19599C14.3965 3.78941 12.4887 2.99921 10.4995 2.99921C8.51035 2.99921 6.60262 3.78941 5.19605 5.19599C3.78947 6.60256 2.99927 8.51029 2.99927 10.4995C2.99927 12.4887 3.78947 14.3964 5.19605 15.803C6.60262 17.2096 8.51035 17.9998 10.4995 17.9998C12.4887 17.9998 14.3965 17.2096 15.803 15.803Z" stroke="#706F6F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <input id="search-field" type="text" class="w-[700px] h-16 bg-transparent      text-neutral-900 text-base leading-[30px]" placeholder="Search your phone"/>
+                </label>
+
+                <!--? input btn -->
+                <button onclick="handleSearch()" class="py-[17px] px-10 bg-blue-600 rounded-lg         text-white text-xl font-bold">Search</button>
+            </div>
+        </section>
+        <!--! search end -->
+
+        
+        <!--! search result start -->
+        <section class="container mx-auto">
+            <!--* Spinner -->
+            <div id="loading-spinner" class="text-center my-52 hidden">
+                <span class="loading loading-bars loading-lg"></span>
+            </div>
+
+            <!--* cards -->
+            <div id="phone-container" class="py-[50px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- 1 -->
+                <div class="card  shadow-md w-auto bg-white rounded-lg border border-stone-300 hidden">
+                    <div class="m-[25px] bg-blue-600 bg-opacity-5 rounded-lg">
+                        <figure class="px-[80px] py-[42px]">
+                            <img src="images/demo.png" alt="Shoes" class="rounded-xl"/>
+                        </figure>
+                    </div>
+                    <div class="card-body items-center text-center">
+                      <h2 class="card-title text-neutral-700 text-[25px] font-bold">Iphone 13 Pro Max</h2>
+                      <p class="text-neutral-500 text-lg font-normal leading-[30px] pb-2">There are many variations of passages of available, but the majority have suffered</p>
+                      <p class="text-center text-neutral-700 text-[25px] font-bold pb-2">$999</p>
+                      <div class="card-actions">
+                        <button class="py-[9px] px-[25px] bg-blue-600 rounded-lg         text-white text-xl font-semibold">Search</button>
+                      </div>
+                    </div>
+                </div>
+                <!-- 2 -->
+                <div class="card  shadow-md w-auto bg-white rounded-lg border border-stone-300 hidden">
+                    <div class="m-[25px] bg-blue-600 bg-opacity-5 rounded-lg">
+                        <figure class="px-[80px] py-[42px]">
+                            <img src="images/demo.png" alt="Shoes" class="rounded-xl"/>
+                        </figure>
+                    </div>
+                    <div class="card-body items-center text-center">
+                      <h2 class="card-title text-neutral-700 text-[25px] font-bold">Iphone 13 Pro Max</h2>
+                      <p class="text-neutral-500 text-lg font-normal leading-[30px] pb-2">There are many variations of passages of available, but the majority have suffered</p>
+                      <p class="text-center text-neutral-700 text-[25px] font-bold pb-2">$999</p>
+                      <div class="card-actions">
+                        <button class="py-[9px] px-[25px] bg-blue-600 rounded-lg         text-white text-xl font-semibold">Search</button>
+                      </div>
+                    </div>
+                </div>
+                <!-- 3 -->
+                <div class="card  shadow-md w-auto bg-white rounded-lg border border-stone-300 hidden">
+                    <div class="m-[25px] bg-blue-600 bg-opacity-5 rounded-lg">
+                        <figure class="px-[80px] py-[42px]">
+                            <img src="images/demo.png" alt="Shoes" class="rounded-xl"/>
+                        </figure>
+                    </div>
+                    <div class="card-body items-center text-center">
+                      <h2 class="card-title text-neutral-700 text-[25px] font-bold">Iphone 13 Pro Max</h2>
+                      <p class="text-neutral-500 text-lg font-normal leading-[30px] pb-2">There are many variations of passages of available, but the majority have suffered</p>
+                      <p class="text-center text-neutral-700 text-[25px] font-bold pb-2">$999</p>
+                      <div class="card-actions">
+                        <button class="py-[9px] px-[25px] bg-blue-600 rounded-lg         text-white text-xl font-semibold">Search</button>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--* show all btn -->
+            <div id="show-all-container" class="text-center mb-[120px] hidden">
+                <button onclick="handleShowAll()" class="py-[17px] px-10 bg-blue-600 rounded-lg         text-white text-xl font-bold">Show All</button>
+            </div>
+        </section>
+        <!--! search result end -->
+
+        <!--! show details modal -->
+        <!-- Open the modal using ID.showModal() method -->
+        <dialog id="showDetailsModal" class="modal modal-bottom sm:modal-middle">
+
+        <div class="modal-box w-3/5 max-w-3xl">
+            <div id="phone-details-container">
+                <!-- <div class="bg-blue-600 bg-opacity-5 rounded-lg">
+                    <figure class="px-[100px] py-[51px]">
+                        <img src="images/demo.png" alt="Shoes" class="rounded-xl"/>
+                    </figure>
+                </div>
+                <h3 class="text-neutral-700 text-3xl font-bold pt-10 pb-6">Iphone</h3>
+                <p class="w-auto text-neutral-500 text-base font-normal leading-relaxed pb-5">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+
+                <p class="text-neutral-700 text-xl font-semibold pb-4">Storage : <span class="text-neutral-500 text-xl">123</span></p>
+                <p class="text-neutral-700 text-xl font-semibold pb-4">Storage : <span class="text-neutral-500 text-xl">123</span></p>
+                <p class="text-neutral-700 text-xl font-semibold pb-4">Storage : <span class="text-neutral-500 text-xl">123</span></p>
+                <p class="text-neutral-700 text-xl font-semibold pb-4">Storage : <span class="text-neutral-500 text-xl">123</span></p>
+                <p class="text-neutral-700 text-xl font-semibold pb-4">Storage : <span class="text-neutral-500 text-xl">123</span></p>
+                <p class="text-neutral-700 text-xl font-semibold pb-4">Storage : <span class="text-neutral-500 text-xl">123</span></p>
+                <p class="text-neutral-700 text-xl font-semibold pb-4">Storage : <span class="text-neutral-500 text-xl">123</span></p>
+                <p class="text-neutral-700 text-xl font-semibold pb-4">Storage : <span class="text-neutral-500 text-xl">123</span></p> -->
+            </div>
+
+            <div class="modal-action">
+            <form method="dialog">
+                <!-- if there is a button in form, it will close the modal -->
+                <button onclick="handleShowAll()" class="py-[17px] px-10 bg-red-500 rounded-lg         text-white text-xl font-bold">Close</button>
+            </form>
+            </div>
+        </div>
+        </dialog>
+
+    </main>
+
+
+    <!--! footer start -->
+    <footer class="bg-blue-600 bg-opacity-5">
+        <div class="container mx-auto flex justify-between items-center pt-[140px] pb-[70px]">
+            <div>
+                <h1 class="text-stone-950 text-[45px] font-bold">Hot Gadgets</h1>
+                <p class="text-neutral-500 text-lg font-semibold font-['Open Sans'] leading-loose pt-[10px]">You can definitely work.</p>
+            </div>
+            <div class="flex gap-8">
+                <div class="flex gap-4 justify-center items-center">
+                    <img class="cursor-pointer" src="images/Facebook.png" alt="icon">
+                    <img class="cursor-pointer" src="images/Twitter.png" alt="icon">
+                    <img class="cursor-pointer" src="images/Instagram.png" alt="icon">
+                </div>
+                <button class="py-[17px] px-10 bg-blue-600 rounded-lg      text-white text-xl font-bold">Join Premium</button>
+            </div>
+        </div>
+
+        <hr class="container mx-auto">
+
+        <div class="footer container mx-auto flex justify-between pt-[50px] pb-[120px]">
+            <nav>
+                <h6 class="footer-title text-neutral-700 text-2xl">Product</h6> 
+                <a class="link link-hover text-neutral-700 text-xl font-medium leading-[50px]">Browse jobs</a>
+                <a class="link link-hover text-neutral-700 text-xl font-medium leading-[50px]">Remote jobs</a>
+                <a class="link link-hover text-neutral-700 text-xl font-medium leading-[50px]">Startup jobs</a>
+                <a class="link link-hover text-neutral-700 text-xl font-medium leading-[50px]">Company jobs</a>
+            </nav> 
+            <nav>
+                <h6 class="footer-title text-neutral-700 text-2xl">Popular</h6> 
+                <a class="link link-hover text-neutral-700 text-xl font-medium leading-[50px]">UI-UX Design</a>
+                <a class="link link-hover text-neutral-700 text-xl font-medium leading-[50px]">Product Design</a>
+                <a class="link link-hover text-neutral-700 text-xl font-medium leading-[50px]">Back-End Developer</a>
+                <a class="link link-hover text-neutral-700 text-xl font-medium leading-[50px]">Front-End Developer</a>
+            </nav> 
+            <nav>
+                <h6 class="footer-title text-neutral-700 text-2xl">Resource</h6> 
+                <a class="link link-hover text-neutral-700 text-xl font-medium leading-[50px]">Faq</a>
+                <a class="link link-hover text-neutral-700 text-xl font-medium leading-[50px]">Support</a>
+                <a class="link link-hover text-neutral-700 text-xl font-medium leading-[50px]">Privacy Policy</a>
+                <a class="link link-hover text-neutral-700 text-xl font-medium leading-[50px]">Terms of Service</a>
+            </nav>
+            <nav>
+                <h6 class="footer-title text-neutral-700 text-2xl">Company</h6> 
+                <a class="link link-hover text-neutral-700 text-xl font-medium leading-[50px]">About Us</a>
+                <a class="link link-hover text-neutral-700 text-xl font-medium leading-[50px]">Contact Us</a>
+                <a class="link link-hover text-neutral-700 text-xl font-medium leading-[50px]">Career Tips</a>
+                <a class="link link-hover text-neutral-700 text-xl font-medium leading-[50px]">Careers</a>
+            </nav>
+        </div>
+    </footer>
+    <!--! footer end -->
+
+    <script src="js/script.js"></script>
+</body>
+</html>
